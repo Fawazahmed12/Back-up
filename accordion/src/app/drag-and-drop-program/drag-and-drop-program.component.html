@@ -1,0 +1,45 @@
+<h1>image Program</h1>
+<!--<div class="outline">-->
+<!--&lt;!&ndash;  <img src="https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg" alt="Meal Image" class="meal-image">&ndash;&gt;-->
+<!--</div>-->
+<!--<div *ngFor="let meal of meals">-->
+<!--  <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="meal-image">-->
+<!--  <h6>{{meal.strMeal}}</h6>-->
+<!--  <div>{{meal.strCategory}}</div>-->
+<!--  <p>{{meal.strInstructions}}</p>-->
+<!--  <h6>{{meal.strTags}}</h6>-->
+<!--</div>-->
+
+
+<!--<div class="head">-->
+<!--  <div *ngFor="let meal of meals" class="meal-card">-->
+<!--    <div class="">-->
+<!--      <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="meal-image">-->
+<!--      <div class="card">-->
+<!--        <div>-->
+<!--          <h6>{{meal.strMeal}}</h6>-->
+<!--          <div>{{meal.strCategory}}</div>-->
+<!--          <h6>{{meal.strTags}}</h6>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+<div *ngFor="let meal of meals" class="meal-card" draggable="true" (dragstart)="onDragStart($event, meal)">
+  <div class="">
+    <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="meal-image">
+    <div class="card">
+      <div>
+        <h6>{{meal.strMeal}}</h6>
+        <div>{{meal.strCategory}}</div>
+        <h6>{{meal.strTags}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="drop-area" (dragover)="onDragOver($event)" (drop)="onDrop($event)" style="width:600px;height:600px">
+</div>

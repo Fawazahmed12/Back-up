@@ -1,0 +1,8 @@
+<h1>Circle Program</h1>
+<button (click)="onAddClick()">Add Circle</button>
+<div>circleCount: {{ circleCount }}</div>
+<div *ngFor="let circle of circles"
+     class="circle"
+     [style.backgroundColor]="circle.color"
+     (click)="onCircleClick(circle)">
+</div>

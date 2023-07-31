@@ -1,0 +1,9 @@
+<h1>Section Program</h1>
+<div class="container">
+  <accordion>
+    <accordion-group heading="{{item.title}}" *ngFor="let item of accordionList;" [panelClass]="'panel-color'">
+      {{ item.description}}
+    </accordion-group>
+  </accordion>
+</div>
+<router-outlet></router-outlet>
